@@ -2,6 +2,43 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Установка LTS Node.js с использованием NVM на Windows
+
+1. Скачайте и установите NVM (Node Version Manager) для Windows с [официального сайта](https://github.com/coreybutler/nvm-windows/releases).
+
+2. Откройте PowerShell с правами администратора. Для этого нажмите правой кнопкой мыши на значок PowerShell и выберите "Запустить от имени администратора".
+
+3. В PowerShell выполните следующую команду для установки LTS версии Node.js:
+
+    ```powershell
+    nvm install --lts
+    ```
+
+4. После установки, убедитесь, что LTS версия Node.js установлена корректно, выполнив следующую команду:
+
+    ```powershell
+    node -v
+    ```
+
+    Эта команда должна вывести версию Node.js, которую вы только что установили.
+
+5. Установите все зависимости проекта, выполнив команду:
+
+    ```powershell
+    npm i
+    ```
+
+    Эта команда установит все пакеты, указанные в файле `package.json` вашего проекта.
+
+
+6. Теперь вы можете запустить свой проект, используя следующую команду:
+
+    ```powershell
+    npm start
+    ```
+
+> Примечание: Всегда запускайте свой проект в PowerShell с правами администратора, чтобы избежать проблем с правами доступа.
+
 ## Available Scripts
 
 In the project directory, you can run:
