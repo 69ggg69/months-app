@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
 import './App.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState('');
 
-  const handleAddTodo = () => {
-    if (inputValue.trim() !== '') {
-      setTodos([...todos, inputValue]);
-      setInputValue('');
-    }
+  const handleAddTodo = (todoText) => {
+    setTodos([...todos, todoText]);
   };
 
   const handleDeleteTodo = (index) => {
@@ -21,18 +19,14 @@ function TodoList() {
   return (
     <div>
       <h1>Todo List</h1>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-      <button onClick={handleAddTodo}>Add Todo</button>
+      <TodoInput onAddTodo={handleAddTodo} />
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>
-            {todo}
-            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
-          </li>
+          <TodoItem
+            key={index}
+            todo={todo}
+            onDelete={() => handleDeleteTodo(index)}
+          />
         ))}
       </ul>
     </div>
