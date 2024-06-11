@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-impost ./App.css;
+impost './App.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
